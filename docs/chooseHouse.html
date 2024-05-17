@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head> 
+    <meta charset="utf-8">
+    <title>Petopia: Virtual Companion</title>
+  </head>
+  <body>
+    <h1>Choose the Basics</h1>
+    <h2>Now lets choose some basic necessities for your pet</h2>
+    <h3>Progress through the next few prompts to choose a house, bed, food, and toys for your pet. Keep your funds in mind!</h2>
+    <h3>Paw Points Funds: <span id="pawPointsAvailable">1000</span></h2>
+    <form id="chooseHouse">
+      <p>What type of house would you like for your pet? Choose an option A-F. (Be sure to capitalize your choice!)</p>
+      <p>PP = Paw Points</p>
+      <p>A.) Hovel for 100 PP</p>
+      <p>B.) Small shack for 150 PP</p>
+      <p>C.) Tree House for 300 PP</p>
+      <p>D.) Apartment for 350 PP</p>
+      <p>E.) Cottage for 400 PP</p>
+      <p>F.) Mansion for 450 PP</p>
+      <label for="house">House:</label>
+      <input id="house" type="text" required />
+      <button type="submit">Calculate New Total</button>
+      <button id="nextButton" type="button">Next</button>
+    </form>  
+
+    <script src="js/chooseHouse.js">
+    </script>
+  </body>
+</html>

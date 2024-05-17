@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Petopia: Virtual Companion</title>
+  </head>
+  <body>
+    <h1>Choose the Basics</h1>
+    <h2>Now let's choose some basic necessities for your pet</h2>
+    <h3>Progress through the next few prompts to choose a house, bed, food, and toys for your pet. Keep your funds in mind!</h3>
+    <h3>Paw Points Funds: <span id="pawPointsAvailable"></span></h3>
+    <form id="chooseBed">
+      <p>What type of bed would you like for your pet? Choose an option A-E. (Be sure to capitalize your choice!)</p>
+      <p>PP = Paw Points</p>
+      <p>A.) Small straw bed for 2 PP</p>
+      <p>B.) Large straw bed for 5 PP</p>
+      <p>C.) Large cotton bed for 7 PP</p>
+      <p>D.) Large down bed for 9 PP</p>
+      <p>E.) Large bed of their choosing for 15 PP</p>
+      <label for="bed">Bed:</label>
+      <input id="bed" type="text" required />
+      <button type="submit">Calculate New Total</button>
+      <button id="nextButton" type="button">Next</button>
+    </form>
+
+    <script src="js/chooseBed.js">
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Petopia: Virtual Companion</title>
+  </head>
+  <body>
+    <h1>Choose the Basics</h1>
+    <h2>Now let's choose some basic necessities for your pet</h2>
+    <h3>Progress through the next few prompts to choose a house, bed, food, and toys for your pet. Keep your funds in mind!</h3>
+    <h3>Paw Points Funds: <span id="pawPointsAvailable"></span></h3>
+    <form id="chooseFood">
+      <p> What type of food would you like for your pet? Choose option A-G. (Be sure to capitalize your choice!)<p>
+      <p>PP = Paw Points</p>
+      <p>A.)Low quality grain for 5 PP </p>
+      <p>B.)Slop for 6 PP </p>
+      <p>C.)House brand dry food for 8 PP<p>
+      <p>D.)Name brand dry food for 15 PP </p>
+      <p>E.)Questionable wet food for 13 PP </p>
+      <p>F.)Name brand wet food for 20 </p>
+      <p>G.)Gourmet pet meal plan for 30 PP </p>
+      <label for="food">Food:</label>
+      <input id="food"  type="text" required />
+      <button type="submit">Calculate New Total</button>
+      <button id="nextButton" type="button">Next</button>
+    </form>  
+       
+    <script src="js/chooseFood.js">
+
+    </script>
+  </body>
+</html>  

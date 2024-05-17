@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset = "utf-8">
+    <title>Petopia: Virtual Companion</title>
+  </head>
+  <body> 
+    <h1> Choose your pet </h1>
+    <p> Below, choose which pet you would like as your companion. Then give it a name! </p>
+    <form id="petSelector">
+      <label for="petType">Pet Type</label>
+      <select id="petType" required>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="mouse">Mouse</option>
+        <option value="bird">Bird</option>
+        <option value="Fish">Fish</option>
+        <option value="horse">Horse</option>
+        <option value="lizard">Lizard</option>
+        <option value="cow">Cow</option>
+        <option value="pig">Pig</option>
+        <option value="chicken">Chicken</option>
+        <option value="duck">Duck</option>
+      </select>  
+      
+      <label for="petName">Pet Name</label>
+      <input id="petName" type="text" required />
+      <button type= "submit">Submit</button>
+    </form>
+    <script src="js/choosePet.js">
+    </script>
+  </body>
+</html>  

@@ -1,0 +1,312 @@
+1)Problem Statement: Create a pet simulation program. The program will have a currency called Paw Points. the program should allow users to choose a pet and then name it. It should then have the user select a house, food, bed, and toys for the pet. Each one of those should be on a different page. After each choice the user makes the cost of each should be subtracted from the available Paw Points and the new Paw Points balance should be displayed. If an item cost more than the amount of Paw Points then the user should be alerted. The last page should have a button to redirect to the first page to start over. The user should only be able to choose one house, bed, and food for their pet but can choose multiple toys and should display the remaining Paw Points balance and a farewell message.
+	
+Nouns:  pet, petName, house, bed, food, Paw Points, toys
+Verbs:  choose pet, name pet, choose house, choose bed, choose food, choose 	toys, display pet choice and name, calculate new Paw Points, display Paw Points,	alert for Paw Points
+
+2)Defining Diagram
+
+Inputs:
+	Page 1:no inputs
+	Page 2:petType, petName
+	Page 3:houseChoice
+	Page 4:bedChoice
+	Page 5:foodChoice
+	Page 6:toyChoice
+
+Processing: 
+	Page 1:
+	Go to next page 
+	Page 2:
+	Use form to get petChoice from user
+	Use form to have user enter name
+	go to next page
+	Page 3:
+	Set Paw Points to 1000
+	Use form to get houseChoice from user
+	subtract PawPoints based on houseChoice
+	output new pawPoints available
+	go to next page
+	Page 4:
+	Display availablePawPoints 
+	Use Form to ask user for bedChoice
+	subtract from Paw Points based on choice
+	display new amount of Paw Points
+	go to next page
+	Page 5:
+	Display availablePawPoints
+	use form to ask user for foodChoice
+	subtract Paw Points based on choice
+	display new amount of Paw Points
+	go to next page
+	Page 6:
+	Display availablePawPoints
+	prompt user for toyChoice
+	subtract Paw Points based on choice
+	display new Paw Points
+	loop until user enters "n"
+	display remaining balance of Paw Points
+	redirect to Welcome page 
+Outputs:
+	Page 1:no outputs
+	Page 2:n outputs
+	Page 3:pawPointsAvailable
+	Page 4:pawPointsAvailable
+	Page 5:pawPointsAvailable
+	Page 6:Remaining Paw Points + pawPointsAvailable + I hope you had fun shopping for your new pet! 	Press the button to start over. 
+
+3)Solution Algorithm
+	Page 1: N/A
+	Page 2:
+	choosePet
+		initialize petType 
+		initialize petName
+		prompt user for petType and a petNamewith "Below, choose which pet you would like as your 		companion. Then give it a name!"
+		display = "You chose a " + petType + " and named it " + petName
+		display submit button		
+	Page 3:
+	chooseHouse
+		initialize houseChoice
+		initialize pawPointsAvailable to 1000
+		display pawPointsAvailable 
+		prompt user for houseChoice
+		IF (petType !== duck && petType !==bird) && houseChoice === "C") THEN
+			alert ("Oh no! The pet you chose has no way to get to a house in the trees! 					Please choose a different option.")
+			return
+		ENDIF	
+		Case of houseChoice
+			A: cost = 100
+			B: cost = 150
+			C: cost = 300
+			D: cost = 350
+			E: cost = 400
+			F: cost = 450
+		ENDCASE
+		pawPointsAvailable -= cost
+		display pawPointsAvailable	
+	Page 4:
+	chooseBed
+		initialize bedChoice
+		pull pawPointsAvailable from previous page
+		display pawPointsAvailable 
+		prompt user for bedChoice
+		Case of bedChoice
+			A: bedCost = 2
+			B: bedCost = 5
+			C: bedCost = 7
+			D: bedCost = 9
+			E: bedCost = 15
+		ENDCASE
+		pawPointsAvailable -= bedCost
+		display pawPointsAvailable	
+
+	Page 5:
+	chooseFood
+		initialize foodChoice
+		pull pawPointsAvailable from previous page
+		display pawPointsAvailable 
+		prompt user for foodChoice
+		Case of bedChoice
+			A: foodCost = 5
+			B: foodCost = 6
+			C: foodCost = 8
+			D: foodCost = 15
+			E: foodCost = 13
+			F: foodCost = 20
+			G: foodCost = 60
+		ENDCASE
+		pawPointsAvailable -= foodCost
+		display pawPointsAvailable	
+
+	Page 6:
+	chooseToys
+		initialize toy
+		pull pawPointsAvailable from previous page
+		display pawPointsAvailable 
+		prompt user for toy
+		Loop until user enters "n"
+			Case of bedChoice
+				A: cost = 10
+				B: cost = 15
+				C: cost = 20
+				D: cost = 300
+				E: cost = 17
+				F: cost = 100
+				G: cost = 75
+			ENDCASE
+		ENDLOOP
+		pawPointsAvailable -= cost
+		display = Remaining Paw points + pawPointsAvailable + I hope you had fun shopping for 				your new pet! Press the button to start over. 
+	
+4)Checking Solution Algorithm
+	Test Case 1:
+		Page 1:N/A
+		Page 2:
+			Input Values: Dog, Ali
+		
+			Expected Result: no output but moves to next page after hitting submit.
+
+			Actual result:no output but moves to next page after hitting submit.  
+		Page 3:
+			Input Values:F
+		
+			Expected Result: Paw Points Funds: 550 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 550 (then moves to next page after hitting 						 next)
+
+		Page 4:
+			Input Values:E
+		
+			Expected Result: Paw Points Funds: 535 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 535 (then moves to next page after hitting 						 next)
+
+		Page 5:
+			Input Values: A
+		
+			Expected Result: Paw Points Funds: 530 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 530 (then moves to next page after hitting 						 next)
+
+		Page 6:
+			Input Values:D,D		
+			Expected Result: "You don't have enough money to buy this toy!"
+
+			Actual result: "You don't have enough money to buy this toy!"
+
+	Test Case 2:
+		Page 1:N/A
+		Page 2:
+			Input Values:Duck, Duck
+		
+			Expected Result:no output but moves to next page after hitting submit.
+
+			Actual result:no output but moves to next page after hitting submit.
+		Page 3:
+			Input Values:C
+		
+			Expected Result: Paw Points Funds: 700 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 700 (then moves to next page after hitting 						 next)
+
+		Page 4:
+			Input Values:D
+		
+			Expected Result:Paw Points Funds: 691 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 691 (then moves to next page after hitting 						 next)
+
+		Page 5:
+			Input Values:G
+		
+			Expected Result:Paw Points Funds: 631 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 631 (then moves to next page after hitting 						 next)
+
+		Page 6:
+			Input Values:D,D,A,n
+		
+			Expected Result: Remaining Paw Points: 21
+					I hope you had fun shopping for your new pet!
+					Press the button to start over 
+					(returns to beginning after hitting button)	
+
+			Actual result:Remaining Paw Points: 21
+					I hope you had fun shopping for your new pet!
+					Press the button to start over 
+					(returns to beginning after hitting button)
+
+
+	Test Case 3:
+		Page 1:N/A
+		Page 2:
+			Input Values:Fish, Nemo 
+		
+			Expected Result:no output but moves to next page after hitting submit.
+
+			Actual result:no output but moves to next page after hitting submit.
+		Page 3:
+			Input Values: C, (hit okay), E	
+			
+			Expected Result: Oh no! The pet you chose has no way to get to a house in the 						trees! Please choose a different option.
+					Paw Points Funds: 600 (then moves to next page after hitting 						next)
+
+			Actual result:
+
+		Page 4:
+			Input Values:A
+		
+			Expected Result:Paw Points Funds: 598 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 598 (then moves to next page after hitting 						 next)
+
+		Page 5:
+			Input Values:E
+		
+			Expected Result:Paw Points Funds: 585 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 585 (then moves to next page after hitting 						 next)
+
+		Page 6:
+			Input Values:""
+		
+			Expected Result: Please enter an acceptable value
+
+			Actual result: Please enter an acceptable value
+
+
+	Test Case 4:
+		Page 1:N/A
+		Page 2:
+			Input Values:Mouses, Despereaux
+		
+			Expected Result:no output but moves to next page after hitting submit.
+
+			Actual result:no output but moves to next page after hitting submit.
+		Page 3:
+			Input Values:B
+		
+			Expected Result:Paw Points Funds: 850 (then moves to next page after hitting 						 next)
+
+			Actual result:Paw Points Funds: 850 (then moves to next page after hitting 						 next)
+
+		Page 4:
+			Input Values: Z,(click okay), A
+		
+			Expected Result: Please enter a value between A and E. Be sure to capitalize. 
+					Paw Points Funds: 848 (then moves to next page after hitting 						next) 
+
+			Actual result:Please enter a value between A and E. Be sure to capitalize. 
+					Paw Points Funds: 848 (then moves to next page after hitting 						next) 
+		Page 5:
+			Input Values:a (click okay), F
+		
+			Expected Result: Please enter a value between A ang G. Be sure to capitalize.
+					Paw Points Funds: 828 (then moves to next page after hitting 						next) 
+			Actual result:Please enter a value between A ang G. Be sure to capitalize.
+					Paw Points Funds: 828 (then moves to next page after hitting 						next)
+		Page 6:
+			Input Values: A, n
+		
+			Expected Result:Remaining Paw Points: 818
+					I hope you had fun shopping for your new pet!
+					Press the button to start over.
+					(returns to beginning after hitting button)
+
+			Actual result:Remaining Paw Points: 818
+					I hope you had fun shopping for your new pet!
+					Press the button to start over.
+					(returns to beginning after hitting button)
+
+
+
+
+
+
+
+	
+	 
+	
+
+
+
+
